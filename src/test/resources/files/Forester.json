@@ -1,9 +1,6 @@
 {
   "brand": "Subaru",
   "model": "Forester",
-  "vehicle ": ["SF", "SG", "SH", "SJ", "SK"],
-  "country": {
-    "title": "Japen",
-    "ISO": "JP"
-  }
+  "country": "Japan",
+  "vehicle": ["SF", "SG", "SH", "SJ", "SK"]
 }
