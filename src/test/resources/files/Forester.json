@@ -1,0 +1,9 @@
+{
+  "brand": "Subaru",
+  "model": "Forester",
+  "vehicle ": ["SF", "SG", "SH", "SJ", "SK"],
+  "country": {
+    "title": "Japen",
+    "ISO": "JP"
+  }
+}
