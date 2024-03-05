@@ -21,21 +21,7 @@ public class ParsingFilesTest {
 
     private final ClassLoader cl = ParsingFilesTest.class.getClassLoader();
 
-    @Test
-    void zipParsingTest() throws Exception {
-        try (InputStream is = cl.getResourceAsStream("files/filesforHW.zip")) {
-            assert is != null;
-            try (ZipInputStream zis = new ZipInputStream(is)) {
-                ZipEntry entry;
-                while ((entry = zis.getNextEntry()) != null) {
-                    System.out.println(entry.getName());
-                }
-            }
-        }
-    }
-
-
-    @Test
+       @Test
     void pdfParsingTestFromZipFile() throws Exception {
         try (InputStream is = cl.getResourceAsStream("files/filesforHW.zip")) {
             assert is != null;
