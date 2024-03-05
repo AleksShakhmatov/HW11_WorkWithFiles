@@ -19,7 +19,8 @@ dependencies {
             'com.opencsv:opencsv:5.9',
             'com.fasterxml.jackson.core:jackson-core:2.13.1',
             'com.fasterxml.jackson.core:jackson-databind:2.16.1',
-            'org.assertj:assertj-core:3.25.1',)
+            'org.assertj:assertj-core:3.25.1',
+            'com.google.code.gson:gson:2.10.1')
 }
 
 test {
