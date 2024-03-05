@@ -21,7 +21,7 @@ public class ParsingFilesTest {
 
     private final ClassLoader cl = ParsingFilesTest.class.getClassLoader();
 
-       @Test
+    @Test
     void pdfParsingTestFromZipFile() throws Exception {
         try (InputStream is = cl.getResourceAsStream("files/filesforHW.zip")) {
             assert is != null;
@@ -77,16 +77,18 @@ public class ParsingFilesTest {
 
     @Test
     void jsonParsingTest() throws Exception {
-        try (InputStream is = cl.getResourceAsStream("files/Forester.json");
-             Reader reader = new InputStreamReader(is)) {
-            ObjectMapper objectMapper = new ObjectMapper();
-            Forester forester = objectMapper.readValue(reader, Forester.class);
+        try (InputStream is = cl.getResourceAsStream("files/Forester.json")) {
+            assert is != null;
+            try (Reader reader = new InputStreamReader(is)) {
+                ObjectMapper objectMapper = new ObjectMapper();
+                Forester forester = objectMapper.readValue(reader, Forester.class);
 
-            Assertions.assertEquals("Subaru", forester.getBrand());
-            Assertions.assertEquals("Forester", forester.getModel());
-            Assertions.assertEquals("Japan", forester.getCountry());
-            Assertions.assertArrayEquals(new String[]{"SF", "SG", "SH", "SJ", "SK"},
-                    forester.getVehicle().toArray());
+                Assertions.assertEquals("Subaru", forester.getBrand());
+                Assertions.assertEquals("Forester", forester.getModel());
+                Assertions.assertEquals("Japan", forester.getCountry());
+                Assertions.assertArrayEquals(new String[]{"SF", "SG", "SH", "SJ", "SK"},
+                        forester.getVehicle().toArray());
+            }
         }
     }
 }
